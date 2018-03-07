@@ -1,5 +1,5 @@
 class Api::AttractionsController < ApplicationController
-  before_action :set_attraction, only: [:show, :destroy, :edit]
+  before_action :set_attraction, only: [:update, :show, :destroy, :edit]
 
   def index
     render json: Attraction.all
