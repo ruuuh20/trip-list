@@ -1,4 +1,4 @@
-.tripCard {
+.tripcard {
   background: whitesmoke;
   width: 31%;
   height: 300px;
@@ -12,6 +12,6 @@
   padding: 10px;
 }
 
-.tripCard:hover {
+.tripcard:hover {
   background: gray;
 }

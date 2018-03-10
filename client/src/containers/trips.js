@@ -3,7 +3,8 @@ import './trips.css'
 import { bindActionCreators } from 'redux';
 import TripForm from './TripForm'
 import { connect } from 'react-redux';
-import { getTrips } from '../actions/trips'
+import { getTrips } from '../actions/trips';
+import TripCard from '../components/TripCard';
 
 class Trips extends Component {
 
@@ -14,13 +15,8 @@ class Trips extends Component {
   render() {
     return (
       <div className="tripsContainer">
-        {this.props.trips.map(trip => {
-          return (
-            <div key={trip.id} className="tripCard">
-            <h1>{trip.destination}</h1>
-          </div>
-        )}
-        )}
+        {this.props.trips.map(trip =>
+          <TripCard key={trip.id} trip={trip} /> )}
         <TripForm />
       </div>
     )
