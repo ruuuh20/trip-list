@@ -4,7 +4,23 @@ import './App.css';
 import { NavBar } from './components/navbar'
 import Trips from './components/trips'
 
+
+let trips = [
+  { name: 'Tokyo', id: 1}
+]
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      trips: []
+    }
+  }
+  componentDidMount() {
+
+  }
   render() {
     return (
       <Router>
@@ -12,7 +28,7 @@ class App extends Component {
         <NavBar/>
         <h1 className="App-title">Trip List App</h1>
         <p className="App-intro">Choose your trip.</p>
-        <Trips />
+        <Trips trips={trips}/>
       </div>
       </Router>
     );

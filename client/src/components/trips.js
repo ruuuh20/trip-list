@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Trips = () => (
+const Trips = (props) => (
   <div>
-    hi
+    {props.trips.map(trip =>
+      <div>
+        <h3>{trip.name}</h3>
+      </div>
+    )}
 
   </div>
 )
