@@ -30,4 +30,6 @@
 .navbar {
   background-color: #D8C3A5;
   height: 30px;
+  width: 100%;
+  justify-content: center;
 }
