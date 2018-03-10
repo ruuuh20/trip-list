@@ -1,7 +1,7 @@
 class Api::TripsController < ApplicationController
 
   def index
-    @trips = Trip.all
+    render json: Trip.all
   end
 
   def create
@@ -10,6 +10,15 @@ class Api::TripsController < ApplicationController
       render json: trip
     else
       render json: { message: trip.errors }, status: 400
+    end
+  end
+
+  def show
+    @trip = Trip.find_by(id: params[:id])
+    if @trip
+      render json: @trip
+    else
+      render json: { message: "Not found" }, status: 404
     end
   end
 
