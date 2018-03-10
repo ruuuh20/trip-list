@@ -7,6 +7,7 @@ import { getTrips } from '../actions/trips';
 import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
 import { Route } from 'react-router-dom'
+import TripsNew from './TripsNew'
 
 class Trips extends Component {
 
@@ -16,11 +17,15 @@ class Trips extends Component {
 
   render() {
     return (
-      <div className="tripsContainer">
-        {this.props.trips.map(trip =>
-          <TripCard key={trip.id} trip={trip} /> )}
-          
-        <TripForm />
+      <div>
+        <div className="tripsContainer">
+          {this.props.trips.map(trip =>
+            <TripCard key={trip.id} trip={trip} /> )}
+        </div>
+
+        <div className="tripform">
+          <p>  <hr/><TripsNew /></p>
+        </div>
       </div>
     )
   }

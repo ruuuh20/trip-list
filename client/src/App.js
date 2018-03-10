@@ -4,6 +4,7 @@ import './App.css';
 import { NavBar } from './components/navbar'
 import Trips from './containers/trips'
 import TripsShow from './containers/TripsShow'
+import TripsNew from './containers/TripsNew'
 
 class App extends Component {
 
@@ -11,14 +12,14 @@ class App extends Component {
     return (
       <Router>
 
-      <div className="App">
-        <NavBar />
-
-        <h1 className="App-title">Trip List App</h1>
-        <p className="App-intro">Choose your trip.</p>
-        <Route path="/" component={Trips} />
-        <Route path="/trips/:id" component={TripsShow} />
-      </div>
+        <div className="App">
+          <NavBar />
+          <h1 className="App-title">Trip List App</h1>
+          <p className="App-intro">Choose your trip.</p>
+          <Route path="/" component={Trips} />
+          <Route path="/trips/:id" component={TripsShow} />
+          <Route path="/trips/new" component={TripsNew} />
+        </div>
       </Router>
     );
   }

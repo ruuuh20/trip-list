@@ -18,3 +18,11 @@ export function getTrips() {
     .catch(error => console.log(error))
   }
 }
+
+export function addTrip(trip) {
+  
+  return {
+    type: 'ADD_TRIP',
+    trip: Object.assign({}, trip)
+  }
+}
