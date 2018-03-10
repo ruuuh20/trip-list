@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import { NavBar } from './components/navbar'
 import Trips from './containers/trips'
@@ -18,7 +18,7 @@ class App extends Component {
           <p className="App-intro">Choose your trip.</p>
           <Route path="/" component={Trips} />
           <Route path="/trips/:id" component={TripsShow} />
-          <Route path="/trips/new" component={TripsNew} />
+          <Route exact path="/trips/new" component={TripsNew} />
         </div>
       </Router>
     );

@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTrip } from '../actions/trips'
+import { addTrip } from '../actions/trips';
+import { bindActionCreators } from 'redux';
 
 class TripsNew extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       destination: ''
     };
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = (event) => {
     event.preventDefault();
     const { addTrip, history } = this.props;
 
     addTrip(this.state);
     // debugger
-    this.props.history.push('/trips')
+    // this.props.history.push('/')
+    // Cannot read property 'push' of  history.push   ????????????
+    this.setState({
+      destination: ''
+    })
   }
 
   handleOnChange = event => {
@@ -43,4 +48,10 @@ class TripsNew extends Component {
   }
 }
 
-export default connect(null, { addTrip })(TripsNew)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addTrip
+  }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(TripsNew)

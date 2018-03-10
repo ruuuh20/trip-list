@@ -13,7 +13,7 @@ const TripsShow = ({ trip }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const trip = state.trips.find(trip => trip.id == ownProps.match.params.id)
+  const trip = state.trips.find(trip => trip.id === ownProps.match.params.id)
 
   if (trip) {
     return { trip }

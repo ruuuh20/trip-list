@@ -19,10 +19,26 @@ export function getTrips() {
   }
 }
 
-export function addTrip(trip) {
-  
-  return {
-    type: 'ADD_TRIP',
-    trip: Object.assign({}, trip)
+// export function addTrip(trip) {
+//
+//   return {
+//     type: 'ADD_TRIP',
+//     trip: Object.assign({}, trip)
+//   }
+// }
+export const addTrip = trip => {
+  return dispatch => {
+    return fetch('/api/trips', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ trip: trip })
+    })
+    .then(resp => resp.json())
+    .then(trip => {
+      debugger
+      dispatch({ type: 'ADD_TRIP', trip })
+  })
   }
 }

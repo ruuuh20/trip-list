@@ -24,7 +24,7 @@ class Trips extends Component {
         </div>
 
         <div className="tripform">
-          <p>  <hr/><TripsNew /></p>
+          <hr/><TripsNew />
         </div>
       </div>
     )
