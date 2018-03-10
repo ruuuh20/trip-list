@@ -1,8 +1,15 @@
 .tripCard {
   background: whitesmoke;
-  width: 300px;
+  width: 31%;
   height: 350px;
+  float: left;
+  margin: 10px;
+
    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.tripsContainer {
+  padding: 10px;
 }
 
 .tripCard:hover {

@@ -6,7 +6,9 @@ import Trips from './components/trips'
 
 
 let trips = [
-  { name: 'Tokyo', id: 1}
+  { name: 'Tokyo', id: 1},
+  { name: 'Seoul', id: 2 },
+  { name: 'London', id: 3 }
 ]
 
 class App extends Component {

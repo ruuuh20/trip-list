@@ -2,7 +2,7 @@ import React from 'react';
 import './trips.css'
 
 const Trips = (props) => (
-  <div>
+  <div className="tripsContainer">
     {props.trips.map(trip =>
       <div className="tripCard">
         <h3>{trip.name}</h3>
