@@ -7,6 +7,8 @@ export default function TripReducer(state = []
     case 'ADD_TRIP':
       // return [ ...state, action.trip ];
        return state.concat(action.trip);
+    // case 'DELETE_TRIP':
+    //   return
 
 
       default:

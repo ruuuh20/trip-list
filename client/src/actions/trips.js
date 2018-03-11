@@ -37,7 +37,7 @@ export const addTrip = trip => {
     })
     .then(resp => resp.json())
     .then(trip => {
-      debugger
+      // debugger
       dispatch({ type: 'ADD_TRIP', trip })
   })
   }

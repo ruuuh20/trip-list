@@ -18,14 +18,16 @@ class Trips extends Component {
   render() {
     return (
       <div>
+      <div className="tripform">
+        <TripsNew />
+      </div>
         <div className="tripsContainer">
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
+        
 
-        <div className="tripform">
-          <hr/><TripsNew />
-        </div>
+
       </div>
     )
   }

@@ -40,7 +40,7 @@ class TripsNew extends Component {
           type="text"
           onChange={this.handleOnChange}
         />
-        <input type="submit" />
+        <input type="submit" value="Create Trip" />
 
       </form>
       </div>
