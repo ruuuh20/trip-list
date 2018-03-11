@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './trips.css'
 import { bindActionCreators } from 'redux';
-import TripForm from './TripForm'
 import { connect } from 'react-redux';
 import { getTrips } from '../actions/trips';
 import TripCard from '../components/TripCard';
@@ -26,7 +25,7 @@ class Trips extends Component {
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
-      
+
 
 
 

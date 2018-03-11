@@ -8,7 +8,8 @@ class TripsNew extends Component {
     super(props);
 
     this.state = {
-      destination: ''
+      destination: '',
+
     };
   }
 
@@ -34,10 +35,12 @@ class TripsNew extends Component {
   render() {
     return (
       <div>
-        <h2>Add a new destination</h2>
+
       <form onSubmit={this.handleOnSubmit}>
+        <label htmlFor="destination">Add new destination: </label>
         <input
           type="text"
+          value={this.state.destination}
           onChange={this.handleOnChange}
         />
         <input type="submit" value="Create Trip" />
