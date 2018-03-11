@@ -5,7 +5,7 @@ class CreateAttractions < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :type
       t.string :img_url
-      t.integer :price
+      t.string :price
       t.string :website
 
 
