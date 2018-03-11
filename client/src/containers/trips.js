@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getTrips } from '../actions/trips';
 import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import TripsNew from './TripsNew'
 
 class Trips extends Component {
@@ -16,6 +16,7 @@ class Trips extends Component {
   }
 
   render() {
+    const { match, trips } = this.props;
     return (
       <div>
       <div className="tripform">
@@ -25,7 +26,11 @@ class Trips extends Component {
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
-        
+
+
+
+
+
 
 
       </div>
@@ -39,4 +44,8 @@ function mapStateToProps(state) {
   })
 }
 
-export default connect(mapStateToProps, { getTrips })(Trips)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getTrips }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trips)

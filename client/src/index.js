@@ -9,7 +9,10 @@ import rootReducer from './reducers/index.js'
 import { Provider } from 'react-redux';
 
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  ));
 
 ReactDOM.render(
   <Provider store={store}>
