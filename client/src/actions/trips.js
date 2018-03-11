@@ -7,7 +7,7 @@ const setTrips = trips => {
 }
 
 export function getTrips() {
-  return (dispatch) => {
+  return dispatch => {
     // dispatch({type: 'FETCH_TRIPS'});
     return fetch('http://localhost:3000/api/trips')
     .then(resp => resp.json())

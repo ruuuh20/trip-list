@@ -26,6 +26,7 @@ class Trips extends Component {
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
+      
 
 
 

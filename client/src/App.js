@@ -18,7 +18,10 @@ class App extends Component {
           <p className="App-intro">Make your trip wishlist.</p>
           <Switch>
             <Route exact path="/" component={Trips} />
-            
+            <Route exact path="/trips" component={Trips} />
+            <Route path="/trips/:tripId" component={TripsShow} />
+
+
 
 
 
