@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import AttractionCard from '../components/AttractionCard'
 
 //
 // const TripsShow = ({ trip }) => {
@@ -36,7 +37,7 @@ class TripsShow extends Component {
         {parisAttractions.map(item => {
           return (
 
-          <li>{item.name}</li>
+          <AttractionCard key={item.id} attraction={item}/>
         )
         })}
 
