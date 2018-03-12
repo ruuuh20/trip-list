@@ -24,10 +24,25 @@
   background: gray;
 }
 
+.title {
+  font-size: 2.5em;
+  color: #24305e;
+}
+
 .tripform {
   width: 100%;
-  height: 70px;
+  height: 50px;
   display: inline-block;
+}
+
+hr {
+  height: 1px;
+  padding-top: 10px;
+  width: 96%;
+  background-color: #24305e;
+  clear: both;
+  display: block;
+  /* float: left; */
 }
 
 
@@ -54,4 +69,5 @@ label {
 .trip-item {
   text-decoration: none;
   color: #24305e;
+  font-size: 1.7em;
 }

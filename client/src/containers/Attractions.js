@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { getAttractions } from '../actions/attractions'
 import { bindActionCreators } from 'redux';
 import AttractionCard from '../components/AttractionCard'
-import './attractions.css'
+import './attractions.css';
+import AttractionsNew from './AttractionsNew';
 
 
 class Attractions extends Component {
@@ -17,12 +18,14 @@ class Attractions extends Component {
     return(
       <div>
 
+
         <div className="attractionsContainer">
-        <h1>ATTRACTIONS</h1>
+        <AttractionsNew />
+        <h1 className="title">ATTRACTIONS</h1>
           {this.props.attractions.map(attraction =>
             <AttractionCard key={attraction.id} attraction={attraction} /> )}
         </div>
-        
+
 
       </div>
     )

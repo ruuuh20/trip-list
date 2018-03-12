@@ -1,0 +1,123 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addAttraction } from '../actions/attractions';
+import { bindActionCreators } from 'redux';
+
+
+class AttractionsNew extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      city: '',
+      category: '',
+      img_url: '',
+      price: '',
+      website: ''
+
+    };
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+    const { addAttraction, history } = this.props;
+
+    addAttraction(this.state);
+
+    this.setState({
+      name: '',
+      city: '',
+      category: '',
+      img_url: '',
+      price: '',
+      website: ''
+    })
+  }
+
+  handleOnChange = event => {
+    this.setState({
+      name: event.target.value,
+      city: event.target.value,
+      category: event.target.value,
+      img_url: event.target.value,
+      price: event.target.value,
+      website: event.target.value
+    });
+  }
+
+  render() {
+    return (
+      <div>
+
+      <form onSubmit={this.handleOnSubmit}>
+        <label htmlFor="name">Name: </label>
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={this.handleOnChange}
+        />
+
+
+        <label htmlFor="city">City: </label>
+        <input
+          className="forminput"
+          type="text"
+          value={this.state.city}
+          onChange={this.handleOnChange}
+        />
+        <br/>
+
+        <label htmlFor="category">Category: </label>
+        <input
+          className="forminput"
+          type="text"
+          value={this.state.category}
+          onChange={this.handleOnChange}
+        />
+
+
+        <label htmlFor="img_url">image_url: </label>
+        <input
+          className="forminput"
+          type="text"
+          value={this.state.img_url}
+          onChange={this.handleOnChange}
+        />
+        <br/>
+
+        <label htmlFor="price">Price: </label>
+        <input
+          className="forminput"
+          type="text"
+          value={this.state.price}
+          onChange={this.handleOnChange}
+        />
+
+
+        <label htmlFor="website">Website: </label>
+        <input
+          className="forminput"
+          type="text"
+          value={this.state.website}
+          onChange={this.handleOnChange}
+        />
+        <br/>
+
+        <input type="submit" value="Create Attraction" />
+
+      </form>
+      </div>
+    )
+  }
+
+
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addAttraction
+  }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(AttractionsNew)

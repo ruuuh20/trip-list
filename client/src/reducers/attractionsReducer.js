@@ -9,6 +9,7 @@ export default function AttractionsReducer(state = []
        return state.concat(action.attraction);
     // case 'DELETE_TRIP':
     //   return
+    
 
 
       default:

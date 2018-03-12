@@ -14,8 +14,13 @@
   float: left;
   height: 65%;
   width: 70%;
-  margin-left: 35px;
+  margin-left: 37px;
 
+}
+
+.title {
+  font-size: 2.5em;
+  color: #24305e;
 }
 
 .attractionsContainer {
@@ -61,4 +66,14 @@
 .attraction-item {
   text-decoration: none;
   color: #24305e;
+}
+
+
+.forminput {
+  margin-left: 20px;
+  text-align: left;
+}
+
+label {
+  justify-content: left;
 }
