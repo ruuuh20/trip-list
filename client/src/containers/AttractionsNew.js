@@ -104,7 +104,7 @@ class AttractionsNew extends Component {
         />
         <br/>
 
-        <input type="submit" value="Create Attraction" />
+        <input id="attractionsubmit" type="submit" value="Create Attraction" />
 
       </form>
       </div>
