@@ -16,3 +16,12 @@
   justify-content: center;
   float: left;
 }
+
+
+.attractionshow {
+  background-color: #24305E;
+  color: white;
+  float: left;
+  width: 30vw;
+  height: 90vh;
+}

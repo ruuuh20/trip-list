@@ -16,18 +16,11 @@ import AttractionCard from '../components/AttractionCard'
 
 
 class TripsShow extends Component {
-
-
-
-
   render() {
 
     const { trip, parisAttractions } = this.props;
-
-    // console.log(parisAttractions)
     // parisAttractions returns an array of objects
     // debugger
-
     return (
       <div>
       <h1>{trip.destination}</h1>
@@ -36,11 +29,9 @@ class TripsShow extends Component {
 
         {parisAttractions.map(item => {
           return (
-
           <AttractionCard key={item.id} attraction={item}/>
-        )
+          )
         })}
-
       </div>
     )
   }
