@@ -13,27 +13,62 @@ import { connect } from 'react-redux';
 //   )
 // }
 
+
 class TripsShow extends Component {
+
+
+
+
   render() {
-    const { trip } = this.props;
+
+    const { trip, parisAttractions } = this.props;
+
+    // console.log(parisAttractions)
+    // parisAttractions returns an array of objects
+    // debugger
 
     return (
       <div>
-
       <h1>{trip.destination}</h1>
+
+        <h2>{trip.destination} Attractions</h2>
+
+        {parisAttractions.map(item => {
+          return (
+
+          <li>{item.name}</li>
+        )
+        })}
+
       </div>
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId)
-  // debugger
-  if (trip) {
+
+  const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId);
+  const parisAttractions = state.attractions.filter(att => att.city === trip.destination)
+
+  if (trip && parisAttractions) {
+    return { trip, parisAttractions }
+  } else if (trip) {
     return { trip }
   } else {
     return { trip: {} }
   }
 }
+
+// const mapStateToProps = (state, ownProps) => {
+//   const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId);
+//
+//   if (trip) {
+//     return {trip }
+//   }
+//     else {
+//       return { trip: {} }
+//     }
+//   }
+
 
 export default connect(mapStateToProps)(TripsShow);

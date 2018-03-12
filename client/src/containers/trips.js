@@ -36,7 +36,8 @@ class Trips extends Component {
 
 function mapStateToProps(state) {
   return ({
-    trips: state.trips
+    trips: state.trips,
+    attractions: state.attractions
   })
 }
 
