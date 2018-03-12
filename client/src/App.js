@@ -23,7 +23,9 @@ class App extends Component {
             <Route path="/trips/:tripId" component={TripsShow} />
             <Route path="/attractions" component={Attractions} />
           </Switch>
-          <Attractions />
+
+          
+
 
         </div>
       </Router>

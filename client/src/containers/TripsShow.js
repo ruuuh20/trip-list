@@ -19,7 +19,7 @@ class TripsShow extends Component {
 
     return (
       <div>
-      
+
       <h1>{trip.destination}</h1>
       </div>
     )
@@ -28,7 +28,7 @@ class TripsShow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId)
-  debugger
+  // debugger
   if (trip) {
     return { trip }
   } else {

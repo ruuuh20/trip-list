@@ -22,10 +22,12 @@ class Trips extends Component {
       <div className="tripform">
         <TripsNew />
       </div>
+      <h1>CITIES</h1>
         <div className="tripsContainer">
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
+        <Attractions />
 
       </div>
     )

@@ -1,0 +1,18 @@
+.attractioncard {
+  background: #A8D0E6;
+  width: 250px;
+  height: 250px;
+  float: left;
+  margin: 35px;
+  display: inline-block;
+
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.attractionsContainer {
+  padding: 10px;
+  margin: 0 30px;
+  /* display: block; */
+  justify-content: center;
+  float: left;
+}
