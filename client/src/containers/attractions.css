@@ -18,10 +18,31 @@
 }
 
 
-.attractionshow {
+.attractionside {
   background-color: #24305E;
   color: white;
   float: left;
-  width: 30vw;
-  height: 90vh;
+  width: 30%;
+  height: 70vh;
+}
+
+.main {
+  /* padding-left: 20px; */
+  text-align: left;
+  background-color: #374785;
+  color: white;
+
+  width: 90%%;
+  height: 70vh;
+
+}
+
+.main p {
+  font-size: .8em;
+  padding: 10px;
+}
+
+.attr-image {
+  height: 500px;;
+  width: 800px;
 }
