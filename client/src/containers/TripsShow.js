@@ -25,7 +25,7 @@ class TripsShow extends Component {
       <div>
       <h1>{trip.destination}</h1>
 
-        <h2>{trip.destination} Attractions</h2>
+        <h2>Places to visit in {trip.destination}</h2>
 
         {parisAttractions.map(item => {
           return (

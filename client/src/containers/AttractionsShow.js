@@ -10,8 +10,9 @@ class AttractionsShow extends Component {
     return (
       <div>
         <div className="attractionside">
-          <h1>{attraction.name}</h1>
+          <h1 id="attr-name">{attraction.name}</h1>
           <h4>{attraction.category}</h4>
+          <p>city: {attraction.city}</p>
           <p>price: {attraction.price}</p>
           <p>website: {attraction.website}</p>
         </div>

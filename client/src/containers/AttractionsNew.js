@@ -36,15 +36,11 @@ class AttractionsNew extends Component {
   }
 
   handleOnChange = event => {
-    this.setState({
-      name: event.target.value,
-      city: event.target.value,
-      category: event.target.value,
-      img_url: event.target.value,
-      price: event.target.value,
-      website: event.target.value
-    });
-  }
+      const { name, value } = event.target
+      this.setState({
+        [name]: value
+      });
+    }
 
   render() {
     return (
@@ -53,6 +49,8 @@ class AttractionsNew extends Component {
       <form onSubmit={this.handleOnSubmit}>
         <label htmlFor="name">Name: </label>
         <input
+          className="forminput"
+          name="name"
           type="text"
           value={this.state.name}
           onChange={this.handleOnChange}
@@ -62,6 +60,7 @@ class AttractionsNew extends Component {
         <label htmlFor="city">City: </label>
         <input
           className="forminput"
+          name="city"
           type="text"
           value={this.state.city}
           onChange={this.handleOnChange}
@@ -71,6 +70,7 @@ class AttractionsNew extends Component {
         <label htmlFor="category">Category: </label>
         <input
           className="forminput"
+          name="category"
           type="text"
           value={this.state.category}
           onChange={this.handleOnChange}
@@ -80,6 +80,7 @@ class AttractionsNew extends Component {
         <label htmlFor="img_url">image_url: </label>
         <input
           className="forminput"
+          name="img_url"
           type="text"
           value={this.state.img_url}
           onChange={this.handleOnChange}
@@ -89,6 +90,7 @@ class AttractionsNew extends Component {
         <label htmlFor="price">Price: </label>
         <input
           className="forminput"
+          name="price"
           type="text"
           value={this.state.price}
           onChange={this.handleOnChange}
@@ -98,6 +100,7 @@ class AttractionsNew extends Component {
         <label htmlFor="website">Website: </label>
         <input
           className="forminput"
+          name="website"
           type="text"
           value={this.state.website}
           onChange={this.handleOnChange}
