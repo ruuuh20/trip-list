@@ -28,8 +28,27 @@
 }
 
 .navbar {
-  background-color: #D8C3A5;
-  height: 30px;
+  background-color: #f8e981;
+  height: 50px;
   width: 100%;
+  margin: 0;
   justify-content: center;
+}
+
+.menu {
+ list-style-type: none;
+}
+
+.menu li {
+  display: inline;
+  padding: 8px;
+
+}
+
+footer {
+  width: 100%;
+  clear: both;
+  height: 50px;
+
+  background-color: #f8e981;
 }

@@ -15,13 +15,16 @@ export const NavBar = (props) => {
   return (
     <div>
       <div className="navbar">
-        <NavLink
+      <ul className="menu">
+        <li><NavLink
         to="/"
         exact activeClassName="active"
-        >Home</NavLink>
-        <NavLink
+        >Home</NavLink></li>
+
+        <li><NavLink
          to="/about"
-       >About</NavLink>
+       >About</NavLink></li>
+      </ul>
      </div>
     </div>
   )

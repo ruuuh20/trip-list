@@ -7,6 +7,7 @@ import TripsShow from './containers/TripsShow'
 import TripsNew from './containers/TripsNew'
 import Attractions from './containers/Attractions'
 import AttractionsShow from './containers/AttractionsShow'
+import {Footer} from './components/footer'
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
           <NavBar />
           <h1 className="App-title">Trip List App</h1>
           <p className="App-intro">Make your trip wishlist.</p>
+
           <Switch>
             <Route exact path="/" component={Trips} />
             <Route exact path="/trips" component={Trips} />
@@ -26,9 +28,7 @@ class App extends Component {
             <Route path="/attractions/:attractionId" component={AttractionsShow} />
           </Switch>
 
-
-
-
+          <Footer />
         </div>
       </Router>
     );
