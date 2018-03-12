@@ -7,6 +7,7 @@ import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
 import { Route, Switch } from 'react-router-dom'
 import TripsNew from './TripsNew'
+import Attractions from './Attractions'
 
 class Trips extends Component {
 
@@ -25,13 +26,6 @@ class Trips extends Component {
           {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} /> )}
         </div>
-
-
-
-
-
-
-
 
       </div>
     )

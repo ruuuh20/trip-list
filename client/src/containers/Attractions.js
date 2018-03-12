@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'redux';
+import { connect } from 'react-redux';
+import { getAttractions } from '../actions/attractions'
+import { bindActionCreators } from 'redux';
+import AttractionCard from '../components/AttractionCard'
+
 
 class Attractions extends Component {
   componentDidMount() {
@@ -8,11 +12,31 @@ class Attractions extends Component {
   }
 
   render() {
-    return() {
+    const { attractions } = this.props
+    return(
+      <div>
+        <div className="attractionsContainer">
+          {this.props.attractions.map(attraction =>
+            <AttractionCard key={attraction.id} attraction={attraction} /> )}
+        </div>
 
+      </div>
+    )
     }
   }
 
 
 
+
+
+function mapStateToProps(state) {
+  return ({
+    attractions: state.attractions
+  })
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getAttractions }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Attractions)

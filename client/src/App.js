@@ -5,6 +5,7 @@ import { NavBar } from './components/navbar'
 import Trips from './containers/trips'
 import TripsShow from './containers/TripsShow'
 import TripsNew from './containers/TripsNew'
+import Attractions from './containers/Attractions'
 
 class App extends Component {
 
@@ -20,13 +21,9 @@ class App extends Component {
             <Route exact path="/" component={Trips} />
             <Route exact path="/trips" component={Trips} />
             <Route path="/trips/:tripId" component={TripsShow} />
-
-
-
-
-
-
+            <Route path="/attractions" component={Attractions} />
           </Switch>
+          <Attractions />
 
         </div>
       </Router>

@@ -1,6 +1,6 @@
 const setAttractions = attractions => {
   return {
-    type: 'GET_TRIPS',
+    type: 'GET_ATTRACTIONS',
     attractions
   }
 }
@@ -12,7 +12,7 @@ export function getAttractions() {
     .then(resp => resp.json())
 
     .then(attractions => {
-      dispatch( setTrips(attractions))
+      dispatch( setAttractions(attractions))
     })
     .catch(error => console.log(error))
   }
