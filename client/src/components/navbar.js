@@ -24,6 +24,9 @@ export const NavBar = (props) => {
         <li><NavLink
          to="/about"
        >About</NavLink></li>
+
+
+
       </ul>
      </div>
     </div>

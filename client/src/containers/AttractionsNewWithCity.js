@@ -46,7 +46,7 @@ class AttractionsNewWithCity extends Component {
     return (
       <div>
 
-      <form onSubmit={this.handleOnSubmit}>
+      <form className="cityform" onSubmit={this.handleOnSubmit}>
         <label htmlFor="name">Name: </label>
         <input
           className="forminput"
