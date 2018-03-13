@@ -18,6 +18,10 @@
 
 }
 
+.attractioncard:hover {
+  background-color: gray;
+}
+
 .title {
   font-size: 2.5em;
   color: #24305e;
