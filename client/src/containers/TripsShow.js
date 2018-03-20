@@ -35,6 +35,7 @@ class TripsShow extends Component {
         })}
 
         <AttractionsNewWithCity trip={trip} />
+        <button className="backbutton" onClick={() => this.props.history.goBack()}>GO BACK</button>
       </div>
     )
   }

@@ -77,11 +77,25 @@
 
 }
 
-footer {
+/* footer {
   width: 100%;
   clear: both;
   height: 55px;
   padding-bottom: 0;
 
   background-color: #f8e981;
+} */
+
+.backbutton {
+
+    background-color: transparent;
+    /* border: none; */
+    color: blue;
+    /* outline: none; */
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+
 }

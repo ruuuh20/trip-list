@@ -7,7 +7,6 @@ import TripsShow from './containers/TripsShow'
 import TripsNew from './containers/TripsNew'
 import Attractions from './containers/Attractions'
 import AttractionsShow from './containers/AttractionsShow'
-import {Footer} from './components/footer'
 import AboutPage from './components/about'
 
 class App extends Component {
@@ -31,7 +30,7 @@ class App extends Component {
             <Route path="/attractions/:attractionId" component={AttractionsShow} />
           </Switch>
 
-          <Footer />
+
         </div>
       </Router>
     );
