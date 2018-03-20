@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavBar = (props) => {
   return (
-    <div>
+
       <div className="navbar">
       <ul className="menu">
         <li><NavLink
@@ -29,6 +29,6 @@ export const NavBar = (props) => {
 
       </ul>
      </div>
-    </div>
+    
   )
 }
