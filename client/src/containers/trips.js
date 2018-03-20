@@ -12,6 +12,7 @@ import Attractions from './Attractions'
 class Trips extends Component {
 
   componentDidMount() {
+    // console.log(this.props)  show history, path, etc
     this.props.getTrips()
   }
 

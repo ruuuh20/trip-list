@@ -20,11 +20,11 @@ class App extends Component {
           <NavBar />
           <h1 className="App-title">Trip List App</h1>
           <p className="App-intro">Make your trip wishlist.</p>
-
+          <Route exact path="/" component={Trips} />
           <Switch>
-            <Route exact path="/" component={Trips} />
+
             <Route exact path="/about" component={AboutPage} />
-            
+
             <Route exact path="/trips" component={Trips} />
             <Route path="/trips/:tripId" component={TripsShow} />
             <Route exact path="/attractions" component={Attractions} />
