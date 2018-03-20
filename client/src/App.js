@@ -8,6 +8,7 @@ import TripsNew from './containers/TripsNew'
 import Attractions from './containers/Attractions'
 import AttractionsShow from './containers/AttractionsShow'
 import {Footer} from './components/footer'
+import AboutPage from './components/about'
 
 class App extends Component {
 
@@ -22,6 +23,8 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Trips} />
+            <Route exact path="/about" component={AboutPage} />
+            
             <Route exact path="/trips" component={Trips} />
             <Route path="/trips/:tripId" component={TripsShow} />
             <Route exact path="/attractions" component={Attractions} />
