@@ -7,9 +7,11 @@ export default function AttractionsReducer(state = []
     case 'ADD_ATTRACTION':
       // return [ ...state, action.trip ];
        return state.concat(action.attraction);
-    // case 'DELETE_TRIP':
-    //   return
-    
+    case 'DELETE_ATTRACTION':
+      const attractions = state.filter(att => att.id !== action.attraction.id)
+      return attractions
+      // returns a new array
+
 
 
       default:

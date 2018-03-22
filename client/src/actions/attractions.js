@@ -5,6 +5,13 @@ const setAttractions = attractions => {
   }
 }
 
+const removeAttraction = attraction => {
+  return {
+    type: 'DELETE_ATTRACTION',
+    attraction
+  }
+}
+
 export function getAttractions() {
   return dispatch => {
     // dispatch({type: 'FETCH_TRIPS'});
@@ -33,4 +40,14 @@ export const addAttraction = attraction => {
     })
   }
 
+}
+
+export const deleteAttraction = attraction => {
+  return dispatch => {
+    return fetch(`/api/attractions/${attraction.id}`, {
+      method: 'DELETE'
+    })
+    .then(resp => dispatch(removeAttraction(attraction)))
+    .catch(error => console.log(error))
+  }
 }
