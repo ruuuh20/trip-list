@@ -22,6 +22,15 @@ class Api::TripsController < ApplicationController
     end
   end
 
+  def destroy
+    @trip = Trip.find_by(id: params[:id])
+    if @trip.destroy
+      render json: { message: "Deleted" }, status: 204
+    else
+      render json: { message: "Unable to remove" }, status: 400
+    end
+  end
+
   private
     def trip_params
       params.require(:trip).permit(:destination)

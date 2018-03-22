@@ -6,6 +6,13 @@ const setTrips = trips => {
   }
 }
 
+const removeTrip = trip => {
+  return {
+    type: 'DELETE_TRIP',
+    trip
+  }
+}
+
 export function getTrips() {
   return dispatch => {
     // dispatch({type: 'FETCH_TRIPS'});
@@ -40,5 +47,15 @@ export const addTrip = trip => {
       // debugger
       dispatch({ type: 'ADD_TRIP', trip })
   })
+  }
+}
+
+export const deleteTrip = trip => {
+  return dispatch => {
+    return fetch(`/api/trips/${trip.id}`, {
+      method: 'DELETE'
+    })
+    .then(resp => dispatch(removeTrip(trip)))
+    .catch(error => console.log(error))
   }
 }

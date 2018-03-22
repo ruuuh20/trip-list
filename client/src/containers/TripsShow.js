@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AttractionCard from '../components/AttractionCard'
 import AttractionsNewWithCity from './AttractionsNewWithCity'
+import { deleteTrip } from '../actions/trips'
+import { bindActionCreators } from 'redux'
 
 //
 // const TripsShow = ({ trip }) => {
@@ -17,6 +19,12 @@ import AttractionsNewWithCity from './AttractionsNewWithCity'
 
 
 class TripsShow extends Component {
+
+  handleOnClick = () => {
+    this.props.deleteTrip(this.props.trip)
+    this.props.history.push('/')
+
+  }
   render() {
 
     const { trip, cityAttractions } = this.props;
@@ -27,7 +35,6 @@ class TripsShow extends Component {
       <h1>{trip.destination}</h1>
 
         <h2>Places to visit in {trip.destination}</h2>
-
         {cityAttractions.map(item => {
           return (
           <AttractionCard key={item.id} attraction={item}/>
@@ -36,6 +43,7 @@ class TripsShow extends Component {
 
         <AttractionsNewWithCity trip={trip} />
         <button className="backbutton" onClick={() => this.props.history.goBack()}>GO BACK</button>
+        <button onClick={this.handleOnClick}>Delete this trip</button>
       </div>
     )
   }
@@ -65,6 +73,11 @@ const mapStateToProps = (state, ownProps) => {
 //       return { trip: {} }
 //     }
 //   }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    deleteTrip,
+  }, dispatch)
+}
 
 
-export default connect(mapStateToProps)(TripsShow);
+export default connect(mapStateToProps, mapDispatchToProps)(TripsShow);
