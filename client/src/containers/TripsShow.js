@@ -34,7 +34,7 @@ class TripsShow extends Component {
       <div>
       <h1>{trip.destination}</h1>
 
-        <h2>Places to visit in {trip.destination}</h2>
+        <h2>({cityAttractions.length}) Places to visit in {trip.destination}</h2>
         {cityAttractions.map(item => {
           return (
           <AttractionCard key={item.id} attraction={item}/>

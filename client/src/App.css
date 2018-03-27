@@ -28,7 +28,8 @@
 }
 
 .navbar {
-  background-color: #f8e981;
+  /* background-color: #f8e981;  */
+  background-color: gray;
   height: 56px;
   width: 100%;
   margin: 0;

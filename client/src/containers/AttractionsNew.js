@@ -65,7 +65,13 @@ class AttractionsNew extends Component {
           value={this.state.city}
           onChange={this.handleOnChange}
         />
-        <br/>
+
+        <select>
+        {this.props.trips.map(t => (
+          <option value={t.destination}>{t.destination}</option>
+        ))}
+        </select>
+          <br/>
 
         <label htmlFor="category">Category: </label>
         <input

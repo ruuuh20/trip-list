@@ -14,13 +14,13 @@ class Attractions extends Component {
   }
 
   render() {
-    const { attractions } = this.props
+    const { attractions, trips } = this.props
     return(
       <div>
 
 
         <div className="attractionsContainer">
-        <AttractionsNew />
+        <AttractionsNew trips={this.props.trips}/>
         <h1 className="title">ATTRACTIONS</h1>
           {this.props.attractions.map(attraction =>
             <AttractionCard key={attraction.id} attraction={attraction} /> )}
@@ -38,7 +38,8 @@ class Attractions extends Component {
 
 function mapStateToProps(state) {
   return ({
-    attractions: state.attractions
+    attractions: state.attractions,
+    trips : state.trips
   })
 }
 

@@ -16,12 +16,24 @@ class Trips extends Component {
     this.props.getTrips()
   }
 
+  displayFiltered = (attractions) => {
+    const filtered = this.props.attractions.filter(a => {a.category === "museum"})
+  //   filtered.forEach(function(at) {
+  //   // debugger
+  //   console.log(at.name)
+  //
+  // })
+  console.log(filtered)
+  }
+
+
   render() {
     const { match, trips } = this.props;
     return (
       <div>
       <div className="tripform">
         <TripsNew />
+
       </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
@@ -32,6 +44,7 @@ class Trips extends Component {
         <br/>
         <hr />
         <Attractions />
+    
 
       </div>
     )
