@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './trips.css'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getTrips } from '../actions/trips';
+import { getTrips, addLikes } from '../actions/trips';
 import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
 import { Route, Switch } from 'react-router-dom'
@@ -25,10 +25,14 @@ class Trips extends Component {
   // // })
   // console.log(filtered)
   // }
+ //  handleLikes = () => {
+ //   this.props.addLikes(this.props.trip)
+ // }
+
 
 
   render() {
-    const { match, trips } = this.props;
+    const { match, trips, addLikes } = this.props;
     return (
       <div>
       <div className="tripform">
@@ -38,7 +42,7 @@ class Trips extends Component {
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
           {this.props.trips.map(trip =>
-            <TripCard key={trip.id} trip={trip} /> )}
+            <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
         </div>
         <br/>
         <br/>
@@ -60,7 +64,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getTrips }, dispatch);
+  return bindActionCreators({
+    getTrips, addLikes
+   }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trips)

@@ -61,6 +61,7 @@ export const deleteTrip = trip => {
 }
 
 export const addLikes = trip => {
+  // console.log(trip)
   return dispatch => {
     return fetch(`/api/trips/${trip.id}`, {
       method: 'PATCH',
@@ -70,7 +71,8 @@ export const addLikes = trip => {
     .then(resp => resp.json())
     .then(trip => {
       dispatch({ type: 'ADD_LIKES', trip })
-      .catch(error => console.log(error))
     })
+      .catch(error => console.log(error))
+
   }
 }

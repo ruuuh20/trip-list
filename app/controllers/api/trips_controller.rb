@@ -13,6 +13,15 @@ class Api::TripsController < ApplicationController
     end
   end
 
+  def update
+    @trip = Trip.find_by(id: params[:id])
+      if @trip.update(trip_params)
+        render json: @trip
+      else
+        render json: { message: "Not found" }, status: 404
+      end
+  end
+
   def show
     @trip = Trip.find_by(id: params[:id])
     if @trip

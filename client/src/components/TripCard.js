@@ -4,7 +4,7 @@ import TripsShow from '../containers/TripsShow'
 
 
 
-class TripCard extends Component {
+const TripCard =  ({trip, addLikes}) =>
 
   // refactoring during project review (added like counter in state and call api button)
   // constructor(props){
@@ -54,18 +54,20 @@ class TripCard extends Component {
     // a e d + err
 
 
-  render() {
-    return (
-    <div key={this.props.trip.id} className="tripcard">
 
-      <h1><Link to={`/trips/${this.props.trip.id}`} className="trip-item">{this.props.trip.destination}</Link></h1>
+
+    <div key={trip.id} className="tripcard">
+
+      <h1><Link to={`/trips/${trip.id}`} className="trip-item">{trip.destination}</Link></h1>
+       <button onClick={() => addLikes(trip)}>Like</button>
+       {trip.likes}
 
 
     </div>
-  )
-  }
 
-}
+
+
+
 
 
 

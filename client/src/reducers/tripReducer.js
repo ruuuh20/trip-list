@@ -11,11 +11,11 @@ export default function TripReducer(state = []
         const trips = state.filter(trip => trip.id !== action.trip.id)
         return trips;
     case 'ADD_LIKES':
-        let index = state.findIndex(trip => trip.id === action.id)
+        let index = state.findIndex(trip => trip.id === action.trip.id)
         let trip = state[index]
         return [
           ...state.slice(0, index),
-          Object.assign({}, trip, { likes: trip.likes += 1 })
+          Object.assign({}, trip, { likes: trip.likes += 1 }),
           ...state.slice(index+1)
         ]
 
