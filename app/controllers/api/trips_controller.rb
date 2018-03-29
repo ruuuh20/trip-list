@@ -33,7 +33,7 @@ class Api::TripsController < ApplicationController
 
   private
     def trip_params
-      params.require(:trip).permit(:destination)
+      params.require(:trip).permit(:destination, :likes)
     end
 
 end
