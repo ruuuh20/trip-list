@@ -59,3 +59,18 @@ export const deleteTrip = trip => {
     .catch(error => console.log(error))
   }
 }
+
+export const addLikes = trip => {
+  return dispatch => {
+    return fetch(`/api/trips/${trip.id}`, {
+      method: 'PATCH',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({trip})
+    })
+    .then(resp => resp.json())
+    .then(trip => {
+      dispatch({ type: 'ADD_LIKES', trip })
+      .catch(error => console.log(error))
+    })
+  }
+}
