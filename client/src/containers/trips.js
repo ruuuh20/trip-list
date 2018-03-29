@@ -32,7 +32,7 @@ class Trips extends Component {
 
 
   render() {
-    const { match, trips, addLikes } = this.props;
+    const { match, orderedTrips, addLikes } = this.props;
     return (
       <div>
       <div className="tripform">
@@ -41,7 +41,7 @@ class Trips extends Component {
       </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
-          {this.props.trips.map(trip =>
+          {this.props.orderedTrips.map(trip =>
             <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
         </div>
         <br/>
@@ -57,7 +57,7 @@ class Trips extends Component {
 
 function mapStateToProps(state) {
   return ({
-    trips: state.trips,
+    orderedTrips: state.trips.sort((a, b) => a.likes < b.likes),
     attractions: state.attractions
 
   })

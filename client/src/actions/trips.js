@@ -64,13 +64,14 @@ export const addLikes = trip => {
   // console.log(trip)
   return dispatch => {
     return fetch(`/api/trips/${trip.id}`, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({trip})
     })
     .then(resp => resp.json())
-    .then(trip => {
-      dispatch({ type: 'ADD_LIKES', trip })
+    .then(data => {
+      // debugger
+      dispatch({ type: 'ADD_LIKES', data })
     })
       .catch(error => console.log(error))
 
