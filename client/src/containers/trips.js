@@ -16,15 +16,15 @@ class Trips extends Component {
     this.props.getTrips()
   }
 
-  displayFiltered = (attractions) => {
-    const filtered = this.props.attractions.filter(a => {a.category === "museum"})
-  //   filtered.forEach(function(at) {
-  //   // debugger
-  //   console.log(at.name)
-  //
-  // })
-  console.log(filtered)
-  }
+  // displayFiltered = (attractions) => {
+  //   const filtered = this.props.attractions.filter(a => {a.category === "museum"})
+  // //   filtered.forEach(function(at) {
+  // //   // debugger
+  // //   console.log(at.name)
+  // //
+  // // })
+  // console.log(filtered)
+  // }
 
 
   render() {
@@ -44,7 +44,7 @@ class Trips extends Component {
         <br/>
         <hr />
         <Attractions />
-    
+
 
       </div>
     )
@@ -55,6 +55,7 @@ function mapStateToProps(state) {
   return ({
     trips: state.trips,
     attractions: state.attractions
+
   })
 }
 
