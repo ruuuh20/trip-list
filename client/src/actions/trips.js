@@ -60,20 +60,39 @@ export const deleteTrip = trip => {
   }
 }
 
-export const addLikes = trip => {
-  // console.log(trip)
-  return dispatch => {
-    return fetch(`/api/trips/${trip.id}`, {
-      method: 'PUT',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({trip})
-    })
-    .then(resp => resp.json())
-    .then(data => {
-      // debugger
-      dispatch({ type: 'ADD_LIKES', data })
-    })
-      .catch(error => console.log(error))
+// export const addLikes = trip => {
+//   // console.log(trip)
+//   return dispatch => {
+//     return fetch(`/api/trips/${trip.id}`, {
+//       method: 'PUT',
+//       headers: {"Content-Type": "application/json"},
+//       body: JSON.stringify({trip})
+//     })
+//     .then(resp => resp.json())
+//     .then(data => {
+//       // debugger
+//       dispatch({ type: 'ADD_LIKES', data })
+//     })
+//       .catch(error => console.log(error))
+//
+//   }
+// }
 
+export const addLikes = (id, values) => {
+  console.log(id)
+  return dispatch => {
+    return fetch(`/api/trips/${id}`, {
+      method: 'PUT',
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     },
+      body: JSON.stringify({trip: {likes: values}}),
+    })
+    .then(response => response.json())
+    .then(trip => {
+      dispatch({type: 'ADD_LIKES', id});
+    })
+    .catch(error => console.log(error));
   }
 }
