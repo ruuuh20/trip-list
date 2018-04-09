@@ -78,8 +78,8 @@ export const deleteTrip = trip => {
 //   }
 // }
 
-export const addLikes = (id, values) => {
-  console.log(id)
+export const addLikes = (id, newlikes) => {
+  // console.log(id)
   return dispatch => {
     return fetch(`/api/trips/${id}`, {
       method: 'PUT',
@@ -87,7 +87,7 @@ export const addLikes = (id, values) => {
        'Accept': 'application/json',
        'Content-Type': 'application/json'
      },
-      body: JSON.stringify({trip: {likes: values}}),
+      body: JSON.stringify({trip: {likes: newlikes}}),
     })
     .then(response => response.json())
     .then(trip => {

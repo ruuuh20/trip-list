@@ -41,7 +41,7 @@ class Trips extends Component {
       </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
-          {this.props.orderedTrips.map(trip =>
+          {this.props.filteredTrips.map(trip =>
             <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
         </div>
         <br/>
@@ -57,7 +57,7 @@ class Trips extends Component {
 
 function mapStateToProps(state) {
   return ({
-    orderedTrips: state.trips.sort((a, b) => a.likes < b.likes),
+    filteredTrips: state.trips.filter(trip => trip.likes > 20),
     attractions: state.attractions
 
   })
