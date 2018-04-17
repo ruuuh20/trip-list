@@ -52,22 +52,12 @@ const TripCard =  ({trip, addLikes}) =>
 
     // a e d + err
 
-
-
-
     <div key={trip.id} className="tripcard">
 
       <h1><Link to={`/trips/${trip.id}`} className="trip-item">{trip.destination}</Link></h1>
        <button onClick={() => addLikes(trip.id, trip.likes + 1)}>Like</button>
        {trip.likes}
 
-
     </div>
-
-
-
-
-
-
 
 export default TripCard;

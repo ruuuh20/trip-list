@@ -29,8 +29,6 @@ class Trips extends Component {
  //   this.props.addLikes(this.props.trip)
  // }
 
-
-
   render() {
     const { match, orderedTrips, addLikes } = this.props;
     return (
@@ -41,15 +39,13 @@ class Trips extends Component {
       </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
-          {this.props.filteredTrips.map(trip =>
+          {this.props.trips.map(trip =>
             <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
         </div>
         <br/>
         <br/>
         <hr />
         <Attractions />
-
-
       </div>
     )
   }
@@ -57,7 +53,8 @@ class Trips extends Component {
 
 function mapStateToProps(state) {
   return ({
-    filteredTrips: state.trips.filter(trip => trip.likes > 20),
+    // filteredTrips: state.trips.filter(trip => trip.likes > 20),
+    trips: state.trips,
     attractions: state.attractions
 
   })
