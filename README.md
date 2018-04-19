@@ -4,7 +4,7 @@ Whether it's the famous museum we have to visit, or the local restaurant that no
 
 
 Installation Guide
-To install and use this project, fork and clone the repo. Run 'rake start' to get the local servers running.
+To install and use this project, fork and clone the repo. Run 'rake start' to get the local servers running. To see samle data, run 'rake db:seed'.
 
 License
 The gem is available as open source under the terms of the MIT License.
