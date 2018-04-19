@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Trips
-trip1 = Trip.create(destination: "Tokyo")
-trip2 = Trip.create(destination: "Paris")
-trip3 = Trip.create(destination: "London")
-trip4 = Trip.create(destination: "Taipei")
-trip5 = Trip.create(destination: "Seoul")
-trip6 = Trip.create(destination: "Barcelona")
+trip1 = Trip.create(destination: "Tokyo", likes: 0)
+trip2 = Trip.create(destination: "Paris", likes: 0)
+trip3 = Trip.create(destination: "London", likes: 0)
+trip4 = Trip.create(destination: "Taipei", likes: 0)
+trip5 = Trip.create(destination: "Seoul", likes: 0)
+trip6 = Trip.create(destination: "Barcelona", likes: 0)
 
 
 #attractions

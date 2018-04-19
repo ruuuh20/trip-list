@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './trips.css'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getTrips } from '../actions/trips';
+import { getTrips, addLikes } from '../actions/trips';
 import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
 import { Route, Switch } from 'react-router-dom'
@@ -16,19 +16,21 @@ class Trips extends Component {
     this.props.getTrips()
   }
 
-  displayFiltered = (attractions) => {
-    const filtered = this.props.attractions.filter(a => {a.category === "museum"})
-  //   filtered.forEach(function(at) {
-  //   // debugger
-  //   console.log(at.name)
-  //
-  // })
-  console.log(filtered)
-  }
-
+  // displayFiltered = (attractions) => {
+  //   const filtered = this.props.attractions.filter(a => {a.category === "museum"})
+  // //   filtered.forEach(function(at) {
+  // //   // debugger
+  // //   console.log(at.name)
+  // //
+  // // })
+  // console.log(filtered)
+  // }
+ //  handleLikes = () => {
+ //   this.props.addLikes(this.props.trip)
+ // }
 
   render() {
-    const { match, trips } = this.props;
+    const { match, orderedTrips, addLikes } = this.props;
     return (
       <div>
       <div className="tripform">
@@ -38,14 +40,12 @@ class Trips extends Component {
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
           {this.props.trips.map(trip =>
-            <TripCard key={trip.id} trip={trip} /> )}
+            <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
         </div>
         <br/>
         <br/>
         <hr />
         <Attractions />
-    
-
       </div>
     )
   }
@@ -53,13 +53,17 @@ class Trips extends Component {
 
 function mapStateToProps(state) {
   return ({
+    // filteredTrips: state.trips.filter(trip => trip.likes > 20),
     trips: state.trips,
     attractions: state.attractions
+
   })
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getTrips }, dispatch);
+  return bindActionCreators({
+    getTrips, addLikes
+   }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trips)

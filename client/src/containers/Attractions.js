@@ -13,6 +13,11 @@ class Attractions extends Component {
 
   }
 
+  handleInput = (event) => {
+    console.log(event.target.value)
+
+  }
+
   render() {
     const { attractions, trips } = this.props
     return(
@@ -20,7 +25,7 @@ class Attractions extends Component {
 
 
         <div className="attractionsContainer">
-        <AttractionsNew trips={this.props.trips}/>
+        <AttractionsNew trips={this.props.trips} changed={this.handleInput}/>
         <h1 className="title">ATTRACTIONS</h1>
           {this.props.attractions.map(attraction =>
             <AttractionCard key={attraction.id} attraction={attraction} /> )}

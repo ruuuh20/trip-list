@@ -68,7 +68,7 @@ class AttractionsNew extends Component {
 
         <select>
         {this.props.trips.map(t => (
-          <option value={t.destination}>{t.destination}</option>
+          <option value={t.destination} onChange={this.handleOnChange}>{t.destination}</option>
         ))}
         </select>
           <br/>
