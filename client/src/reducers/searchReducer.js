@@ -1,8 +1,8 @@
-const searchReducer = (state = {keywords: ""}, action) => {
+const SearchReducer = (state = {keywords: ""}, action) => {
   console.log(action);
   switch(action.type) {
     case 'UPDATE_SEARCH':
-      return {...state, keywords: action.searchKeyWords}
+      return {...state, keywords: action.searchKeywords}
     case 'RETRIEVE_SEARCHES':
       return {...state, prevSearches: action.prevSearches}
     case 'CLEAR_HISTORY':
@@ -12,4 +12,4 @@ const searchReducer = (state = {keywords: ""}, action) => {
   }
 }
 
-export default searchReducer;
+export default SearchReducer;

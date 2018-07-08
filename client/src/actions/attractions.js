@@ -57,8 +57,7 @@ export const fetchVenues = (searchKeywords) => {
     return fetch('/api/attractions/foursquare', {
       method: 'post',
       headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
+       'Accept': 'application/json'
      },
      body: JSON.stringify({
         search: searchKeywords
