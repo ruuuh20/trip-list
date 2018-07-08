@@ -9,8 +9,10 @@ export default function AttractionsReducer(state = []
        return state.concat(action.attraction);
     case 'DELETE_ATTRACTION':
       const attractions = state.filter(att => att.id !== action.attraction.id)
-      return attractions
+      return attractions;
       // returns a new array
+    case 'FETCH_VENUES':
+      return {results: action.venues, submittedSearch: action.submittedSearch}
 
 
 

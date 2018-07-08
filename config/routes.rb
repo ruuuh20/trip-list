@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :attractions
       resources :trips
 
+      post '/attractions/foursquare', to: 'attractions#foursquare'
+
   end
 
 end

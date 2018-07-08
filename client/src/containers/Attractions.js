@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import AttractionCard from '../components/AttractionCard'
 import './attractions.css';
 import AttractionsNew from './AttractionsNew';
+import SearchContainer from './SearchContainer';
+import { fetchVenues } from '../actions/attractions'
 
 
 class Attractions extends Component {
@@ -22,8 +24,9 @@ class Attractions extends Component {
     const { attractions, trips } = this.props
     return(
       <div>
-
-
+      <SearchContainer
+      fetchVenues={this.props.fetchVenues}
+      />
         <div className="attractionsContainer">
         <AttractionsNew trips={this.props.trips} changed={this.handleInput}/>
         <h1 className="title">ATTRACTIONS</h1>
@@ -44,12 +47,13 @@ class Attractions extends Component {
 function mapStateToProps(state) {
   return ({
     attractions: state.attractions,
-    trips : state.trips
+    trips : state.trips,
+    search: state.search
   })
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getAttractions }, dispatch);
+  return bindActionCreators({ getAttractions, fetchVenues }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Attractions)

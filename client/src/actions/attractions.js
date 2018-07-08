@@ -51,3 +51,27 @@ export const deleteAttraction = attraction => {
     .catch(error => console.log(error))
   }
 }
+
+export const fetchVenues = (searchKeywords) => {
+  return dispatch => {
+    return fetch('/api/attractions/foursquare', {
+      method: 'post',
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({
+        search: searchKeywords
+      })
+    }).then(response => {
+    return response.json()
+  }).then(venues => {
+    if (venues.length === 0) {
+        dispatch({type: 'NO_VENUES_FOUND', submittedSearch: searchKeywords })
+      } else {
+        dispatch({type: 'FETCH_VENUES', venues: venues, submittedSearch: searchKeywords})
+      }
+  })
+
+  }
+}
