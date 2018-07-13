@@ -19,7 +19,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <h1 className="App-title">Trip List App</h1>
-          <p className="App-intro">Make your trip wishlist.</p>
+          <p className="App-intro">Create your trip list.</p>
           <Route exact path="/" component={Trips} />
           <Switch>
 
