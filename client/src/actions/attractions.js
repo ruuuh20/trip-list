@@ -15,7 +15,7 @@ const removeAttraction = attraction => {
 export function getAttractions() {
   return dispatch => {
     // dispatch({type: 'FETCH_TRIPS'});
-    return fetch('http://localhost:3000/api/attractions')
+    return fetch('/api/attractions')
     .then(resp => resp.json())
 
     .then(attractions => {
@@ -57,19 +57,21 @@ export const fetchVenues = (searchKeywords) => {
     return fetch('/api/attractions/foursquare', {
       method: 'post',
       headers: {
-       'Accept': 'application/json'
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
      },
      body: JSON.stringify({
         search: searchKeywords
       })
     }).then(response => {
+      // console.log(response)
     return response.json()
+    // return response.text() ? response.json() : null
   }).then(venues => {
-    if (venues.length === 0) {
-        dispatch({type: 'NO_VENUES_FOUND', submittedSearch: searchKeywords })
-      } else {
-        dispatch({type: 'FETCH_VENUES', venues: venues, submittedSearch: searchKeywords})
-      }
+
+
+        dispatch({type: 'FETCH_VENUES', venues: venues })
+
   })
 
   }

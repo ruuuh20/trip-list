@@ -43,13 +43,26 @@ class Api::AttractionsController < ApplicationController
       req.params['client_id'] = ENV['CLIENT_ID']
       req.params['client_secret'] = ENV['CLIENT_SECRET']
       req.params['v'] = '20160201'
-      req.params['near'] = params[:zipcode]
+      req.params['near'] = params[:search]
       req.params['query'] = 'coffee shop'
+       req.headers['Content-Type'] = 'application/json'
     end
 
     body_hash = JSON.parse(@resp.body)
-    @venues = body_hash["response"]["venues"]
+    if @resp.success?
+      # binding.pry
+
+      @venues = body_hash["response"]["venues"]
+      # render json: @venues
+
+    else
+      @error = body_hash["meta"]["errorDetail"]
+
+    end
+
     render json: @venues
+
+
   end
 
   private

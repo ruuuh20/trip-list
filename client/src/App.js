@@ -8,6 +8,7 @@ import TripsNew from './containers/TripsNew'
 import Attractions from './containers/Attractions'
 import AttractionsShow from './containers/AttractionsShow'
 import AboutPage from './components/about'
+import SearchPage from './components/SearchPage'
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Switch>
 
             <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/search" component={SearchPage} />
 
             <Route exact path="/trips" component={Trips} />
             <Route path="/trips/:tripId" component={TripsShow} />

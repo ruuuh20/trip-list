@@ -20,6 +20,8 @@ export function getTrips() {
     .then(response => response.json())
 
     .then(trips => {
+      console.log("hi")
+      console.log(trips)
       dispatch( setTrips(trips))
     })
     .catch(error => console.log(error))

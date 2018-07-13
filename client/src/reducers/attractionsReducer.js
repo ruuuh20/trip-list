@@ -1,8 +1,11 @@
-export default function AttractionsReducer(state = []
+export default function AttractionsReducer(state = {attractions: [], venues: []}
 , action) {
   switch(action.type) {
     case 'GET_ATTRACTIONS':
-      return action.attractions;
+      return {
+        ...state,
+        attractions: action.attractions
+      }
 
     case 'ADD_ATTRACTION':
       // return [ ...state, action.trip ];
@@ -12,7 +15,10 @@ export default function AttractionsReducer(state = []
       return attractions;
       // returns a new array
     case 'FETCH_VENUES':
-      return {results: action.venues, submittedSearch: action.submittedSearch}
+      return {
+        ...state,
+        venues: action.venues
+      }
 
 
 

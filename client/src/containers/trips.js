@@ -14,6 +14,7 @@ class Trips extends Component {
   componentDidMount() {
     // console.log(this.props)  show history, path, etc
     this.props.getTrips()
+    console.log(this.props)
   }
 
   // displayFiltered = (attractions) => {
@@ -31,21 +32,36 @@ class Trips extends Component {
 
   render() {
     const { match, orderedTrips, addLikes } = this.props;
+    let tripsSummary = ""
+    if (this.props.trips.length >= 1) {
+      console.log(this.props.trips)
+      tripsSummary = (
+
+
+      this.props.trips.map(trip =>
+        <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )
+    )
+    }
+    else {
+      tripsSummary = "blank"
+    }
     return (
       <div>
       <div className="tripform">
         <TripsNew />
+        {tripsSummary}
 
       </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
-          {this.props.trips.map(trip =>
-            <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )}
+
         </div>
         <br/>
         <br/>
         <hr />
+        <div>
         <Attractions />
+        </div>
       </div>
     )
   }

@@ -21,7 +21,20 @@ class Attractions extends Component {
   }
 
   render() {
-    const { attractions, trips } = this.props
+    const { attractions, trips } = this.props;
+    let attrSummary = ""
+
+    if (this.props.attractions.length > 1) {
+      console.log(this.props.trips)
+      attrSummary = "greater than 1"
+
+      // {this.props.attractions.map(attraction =>
+      //   <AttractionCard key={attraction.id} attraction={attraction} /> )}
+
+    }
+    else {
+      attrSummary = "blank"
+    }
     return(
       <div>
       <SearchContainer
@@ -30,8 +43,7 @@ class Attractions extends Component {
         <div className="attractionsContainer">
         <AttractionsNew trips={this.props.trips} changed={this.handleInput}/>
         <h1 className="title">ATTRACTIONS</h1>
-          {this.props.attractions.map(attraction =>
-            <AttractionCard key={attraction.id} attraction={attraction} /> )}
+          {attrSummary}
         </div>
 
 

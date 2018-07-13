@@ -6,7 +6,8 @@ import SearchReducer from './searchReducer';
 const rootReducer = combineReducers({
   search: SearchReducer,
   trips: TripReducer,
-  attractions: AttractionsReducer
+  attractions: AttractionsReducer,
+
 })
 
 export default rootReducer;
