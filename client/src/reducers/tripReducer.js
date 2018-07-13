@@ -2,7 +2,7 @@ export default function TripReducer(state = {trips: []}
 , action) {
   switch(action.type) {
     case 'GET_TRIPS':
-      return state.trips;
+      return action.trips;
 
     case 'ADD_TRIP':
       // return [ ...state, action.trip ];

@@ -16,7 +16,7 @@ const removeTrip = trip => {
 export function getTrips() {
   return dispatch => {
     // dispatch({type: 'FETCH_TRIPS'});
-    return fetch('http://localhost:3000/api/trips')
+    return fetch('/api/trips')
     .then(response => response.json())
 
     .then(trips => {
