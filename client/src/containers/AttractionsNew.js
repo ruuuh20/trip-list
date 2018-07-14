@@ -42,6 +42,15 @@ class AttractionsNew extends Component {
       });
     }
 
+
+    // // <select>
+    // // //
+    // // // {this.props.trips.map(t => (
+    // // //   <option value={t.destination} onChange={this.handleOnChange}>{t.destination}</option>
+    // // // ))}
+    // // </select>
+    //   <br/>
+
   render() {
     return (
       <div>
@@ -66,7 +75,7 @@ class AttractionsNew extends Component {
           onChange={this.handleOnChange}
         />
 
-    
+
 
         <label htmlFor="category">Category: </label>
         <input

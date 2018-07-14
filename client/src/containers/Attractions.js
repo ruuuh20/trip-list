@@ -24,12 +24,13 @@ class Attractions extends Component {
     const { attractions, trips } = this.props;
     let attrSummary = ""
 
-    if (this.props.attractions.length > 1) {
-      console.log(this.props.trips)
-      attrSummary = "greater than 1"
+    if (this.props.attractions.length >= 1) {
+      // console.log(this.props.trips)
+      attrSummary = (
 
-      // {this.props.attractions.map(attraction =>
-      //   <AttractionCard key={attraction.id} attraction={attraction} /> )}
+      this.props.attractions.map(attraction =>
+        <AttractionCard key={attraction.id} attraction={attraction} /> )
+      )
 
     }
     else {
