@@ -47,20 +47,22 @@ class Trips extends Component {
     }
     return (
       <div>
+      <h1 className="title">CITIES</h1>
+        <div className="tripsContainer">
+
+
       <div className="tripform">
         <TripsNew />
         {tripsSummary}
 
       </div>
-      <h1 className="title">CITIES</h1>
-        <div className="tripsContainer">
-
         </div>
-        <br/>
-        <br/>
+
+      <div className="attrcontainer">
         <hr />
         <div>
         <Attractions />
+        </div>
         </div>
       </div>
     )
