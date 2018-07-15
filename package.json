@@ -9,6 +9,7 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
+    "fetch-jsonp": "^1.1.3",
     "jquery": "^3.3.1"
   }
 }
