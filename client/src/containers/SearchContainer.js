@@ -59,40 +59,38 @@ class SearchContainer extends Component {
   }
 
   handleOption = (e) => {
+    let countryCode
     // from stackoverflow - to get the id/code for each country!
     for (let node of e.target.children) {
     if (node.value === e.target.value) {
       console.log(node.getAttribute('data-id'))
-      return;
+      countryCode = node.getAttribute('data-id')
+      // return;
     }
   }
-    // console.log(e);
-    // const { target } = e;
-    // const nname = target.getAttribute('name');
-    // console.log(e.target.key)
-    // let selectedCountry = e.target.value
-    // let initialRegions = [];
+
+    let initialRegions = [];
   //
-  //  fetchJsonp("https://battuta.medunes.net/api/region/"
-	//     +countryCode
-	//     +"/all/?key="+BATTUTA_KEY+"&callback=?")
-  //  .then((response) => {
-  // console.log(response)
-  //          return response.json();
-  //      }).then(data => {
-  //        // console.log(data.body + "Hellllllooooo")
-  //        // console.log(JSON.stringify(data))
-  //        var stringed = JSON.stringify(data)
-  //        console.log(data.length)
-  //
-  //      initialCountries = data.map((country) => {
-  //          return country.name
-  //      });
-  //      console.log(initialCountries);
-  //      this.setState({
-  //          countries: initialCountries,
-  //      });
-  //  });
+   fetchJsonp("https://battuta.medunes.net/api/region/"
+	    +countryCode
+	    +"/all/?key=bd8c940f6ad6dfa181f7d32922758c74&callback=?")
+   .then((response) => {
+  console.log(response)
+           return response.json();
+       }).then(data => {
+         // console.log(data.body + "Hellllllooooo")
+         // console.log(JSON.stringify(data))
+         var stringed = JSON.stringify(data)
+         console.log(data.length)
+
+       initialRegions = data.map((region) => {
+           return region.region
+       });
+       console.log(initialRegions);
+       this.setState({
+           regions: initialRegions,
+       });
+   });
   }
 
 
@@ -107,6 +105,8 @@ class SearchContainer extends Component {
       })
   }
 
+  //countries 1
+
    let countries = this.state.countries;
 
   let optionItems = countries.map((country) =>
@@ -116,9 +116,29 @@ class SearchContainer extends Component {
                     data-id={country.code}
 
                     >{country.value}
-                  </option>
+              </option>
 
               );
+ // regions 2
+
+ let regions = ""
+ let regionItems= ""
+ if (this.state.regions.length >= 1) {
+   regions = this.state.regions
+
+ // let regions = this.state.regions ? this.state.regions : ""
+ regionItems = regions.map((region) =>
+      <option
+          key={region.region}
+          data-id={region.region}
+
+       >{region}
+     </option>
+)
+} else {
+  regionItems = "no regions"
+}
+
 
     return (
 
@@ -134,6 +154,9 @@ class SearchContainer extends Component {
       <div>
              <select onChange={(e) => this.handleOption(e)}>
                 {optionItems}
+             </select>
+             <select>
+                {regionItems}
              </select>
          </div>
 
