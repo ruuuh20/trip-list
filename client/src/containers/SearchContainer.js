@@ -206,25 +206,49 @@ cityItems = cities.map((city) =>
     return (
 
       <div>
-    <SearchBox
-      handleOnSubmit={this.handleOnSubmit}
-      handleOnChange={this.handleOnChange}
-       inputValue={this.props.search.keywords}
+        <SearchBox
+          handleOnSubmit={this.handleOnSubmit}
+          handleOnChange={this.handleOnChange}
+           inputValue={this.props.search.keywords}
 
-      />
-      {venues_list}
+          />
+          {venues_list}
 
-      <div>
-             <select onChange={(e) => this.handleOption(e)}>
-                {optionItems}
-             </select>
-             <select onChange={this.handleRegion}>
+      <div className="wrapper">
+
+        <div className="col col-1">
+        <label class="left-align" for="country">Country</label>
+          <div className="select-wrapper">
+          
+                 <select className="select-dropdown"
+                        onChange={(e) => this.handleOption(e)}>
+                    {optionItems}
+                 </select>
+          </div>
+        </div>
+
+      <div className="col col-1">
+      <label class="left-align" for="region">Region</label>
+        <div className="select-wrapper">
+             <select className="select-dropdown"
+                      onChange={this.handleRegion}>
                 {regionItems}
              </select>
-             <select onChange={this.handleCity}>
+             </div>
+           </div>
+
+           <div className="col col-1">
+           <label class="left-align" for="city">City</label>
+             <div className="select-wrapper">
+             <select className="select-dropdown"
+                      onChange={this.handleCity}>
                 {cityItems}
              </select>
+             </div>
+           </div>
+
          </div>
+
 
       </div>
 
