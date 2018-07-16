@@ -7,7 +7,8 @@ import TripCard from '../components/TripCard';
 import TripsShow from './TripsShow'
 import { Route, Switch } from 'react-router-dom'
 import TripsNew from './TripsNew'
-import Attractions from './Attractions'
+import Attractions from './Attractions';
+import SearchContainer from './SearchContainer';
 
 class Trips extends Component {
 
