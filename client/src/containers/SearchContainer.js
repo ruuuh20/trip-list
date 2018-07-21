@@ -7,6 +7,8 @@ import { bindActionCreators } from 'redux';
 import './SearchContainer.css';
 import fetchJsonp from 'fetch-jsonp';
 
+import { addTrip } from '../actions/trips';
+
 // import 'jquery/src/jquery';
 import $ from 'jquery';
 // import * as $ from 'jquery';
@@ -19,7 +21,8 @@ class SearchContainer extends Component {
       selectedCountry: "",
       countries: [],
       regions: [],
-      cities: []
+      cities: [],
+      destination: ""
     }
   }
 
@@ -53,11 +56,25 @@ class SearchContainer extends Component {
     this.props.updateSearch(event.target.value);
   }
 
-  handleOnSubmit = (e) => {
+  handleOnSearch = (e) => {
     e.preventDefault();
     const search = this.props.search.keywords
 
     this.props.fetchVenues(search);
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+    const { addTrip, history } = this.props;
+    console.log(this.state.destination + "yoyo")
+
+    addTrip(this.state);
+    // debugger
+    // this.props.history.push('/')
+    // Cannot read property 'push' of  history.push   ????????????
+    this.setState({
+      destination: ''
+    })
   }
 
   handleOption = (e) => {
@@ -139,10 +156,12 @@ class SearchContainer extends Component {
 
   }
 
-
-
-
-
+  handleCity = (event) => {
+    console.log(event.target.value + "I clicked this")
+    this.setState({
+      destination: event.target.value
+    });
+  }
 
 
   render() {
@@ -202,12 +221,11 @@ cityItems = cities.map((city) =>
  cityItems = "no city"
 }
 
-
     return (
 
       <div>
         <SearchBox
-          handleOnSubmit={this.handleOnSubmit}
+          handleOnSubmit={this.handleOnSearch}
           handleOnChange={this.handleOnChange}
            inputValue={this.props.search.keywords}
 
@@ -215,11 +233,12 @@ cityItems = cities.map((city) =>
           {venues_list}
 
       <div className="wrapper">
+        <form onSubmit={this.handleOnSubmit}>
 
         <div className="col col-1">
-        <label class="left-align" for="country">Country</label>
+        <label className="left-align" for="country">Country</label>
           <div className="select-wrapper">
-          
+
                  <select className="select-dropdown"
                         onChange={(e) => this.handleOption(e)}>
                     {optionItems}
@@ -228,7 +247,7 @@ cityItems = cities.map((city) =>
         </div>
 
       <div className="col col-1">
-      <label class="left-align" for="region">Region</label>
+      <label className="left-align" for="region">Region</label>
         <div className="select-wrapper">
              <select className="select-dropdown"
                       onChange={this.handleRegion}>
@@ -246,6 +265,9 @@ cityItems = cities.map((city) =>
              </select>
              </div>
            </div>
+              <input type="submit" value="Choose this city" />
+
+           </form>
 
          </div>
 
@@ -265,7 +287,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateSearch,
-fetchVenues
+fetchVenues,
+addTrip
 
   }, dispatch)
 }

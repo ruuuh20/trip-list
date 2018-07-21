@@ -51,6 +51,8 @@ class Trips extends Component {
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
 
+        <SearchContainer />
+
 
       <div className="tripform">
         <TripsNew />
