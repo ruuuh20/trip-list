@@ -16,7 +16,7 @@ class TripsNew extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     const { addTrip, history } = this.props;
-
+    console.log(this.state.trips + "hi")
     addTrip(this.state);
     // debugger
     // this.props.history.push('/')

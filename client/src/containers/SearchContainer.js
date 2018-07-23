@@ -66,7 +66,7 @@ class SearchContainer extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     const { addTrip, history } = this.props;
-    console.log(this.state.destination + "yoyo")
+    console.log(this.state + "yoyo")
 
     addTrip(this.state);
     // debugger
@@ -257,7 +257,7 @@ cityItems = cities.map((city) =>
            </div>
 
            <div className="col col-1">
-           <label class="left-align" for="city">City</label>
+           <label className="left-align" for="city">City</label>
              <div className="select-wrapper">
              <select className="select-dropdown"
                       onChange={this.handleCity}>
@@ -280,7 +280,8 @@ cityItems = cities.map((city) =>
 
 const mapStateToProps = (state) => {
   return ({ search: state.search,
-    venues: state.venues
+    venues: state.venues,
+
   });
 }
 
