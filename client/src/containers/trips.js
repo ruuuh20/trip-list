@@ -39,7 +39,7 @@ class Trips extends Component {
       tripsSummary = (
 
 
-      this.props.trips.map(trip =>
+      this.props.trips.reverse().map(trip =>
         <TripCard key={trip.id} trip={trip} addLikes={addLikes}/> )
     )
     }

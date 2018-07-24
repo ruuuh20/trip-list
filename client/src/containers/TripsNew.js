@@ -8,7 +8,7 @@ class TripsNew extends Component {
     super(props);
 
     this.state = {
-      destination: '',
+      destination: 'Or Add a City Here',
 
     };
   }
@@ -16,7 +16,7 @@ class TripsNew extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     const { addTrip, history } = this.props;
-    console.log(this.state.trips + "hi")
+
     addTrip(this.state);
     // debugger
     // this.props.history.push('/')
@@ -37,7 +37,7 @@ class TripsNew extends Component {
       <div>
 
       <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="destination">Add new destination: </label>
+        <label htmlFor="destination"></label>
         <input
           type="text"
           value={this.state.destination}

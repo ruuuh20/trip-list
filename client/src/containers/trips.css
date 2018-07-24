@@ -75,7 +75,6 @@ label {
 
 .trip-item {
   text-decoration: none;
-  /* color: #24305e; */
   color: #000000;
-  font-size: 1.7em;
+  font-size: 1em;
 }
