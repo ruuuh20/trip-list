@@ -2,23 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AttractionCard from '../components/AttractionCard'
 import AttractionsNewWithCity from './AttractionsNewWithCity'
-import { deleteTrip } from '../actions/trips'
+import { deleteTrip, getTrips } from '../actions/trips'
 import { bindActionCreators } from 'redux'
 
-//
-// const TripsShow = ({ trip }) => {
-// // debugger
-//   return (
-//     <div>
-//       <h3>{trip.destination}</h3>
-// hi
-//
-//     </div>
-//   )
-// }
+
 
 
 class TripsShow extends Component {
+
+  componentDidMount = () => {
+    this.props.getTrips()
+  }
 
   handleOnClick = () => {
     this.props.deleteTrip(this.props.trip)
@@ -28,13 +22,14 @@ class TripsShow extends Component {
   render() {
 
     const { trip, cityAttractions } = this.props;
+    console.log("um")
     // cityAttractions returns an array of objects
     // debugger
     return (
       <div>
       <h1>{trip.destination}</h1>
 
-        <h2>({cityAttractions.length}) Places to visit in {trip.destination}</h2>
+        <h2>({cityAttractions.length ? cityAttractions.length : 0}) Places to visit in {trip.destination}</h2>
         {cityAttractions.map(item => {
           return (
           <AttractionCard key={item.id} attraction={item}/>
@@ -50,6 +45,7 @@ class TripsShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  {trips: state.trips}
 
   const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId);
   const cityAttractions = state.attractions.filter(att => att.city === trip.destination)
@@ -63,18 +59,9 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//   const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId);
-//
-//   if (trip) {
-//     return {trip }
-//   }
-//     else {
-//       return { trip: {} }
-//     }
-//   }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
+    getTrips,
     deleteTrip,
   }, dispatch)
 }

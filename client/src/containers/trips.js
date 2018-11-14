@@ -9,13 +9,14 @@ import { Route, Switch } from 'react-router-dom'
 import TripsNew from './TripsNew'
 import Attractions from './Attractions';
 import SearchContainer from './SearchContainer';
+// import Image from '../../public/images/home1.jpg'
 
 class Trips extends Component {
 
   componentDidMount() {
     // console.log(this.props)  show history, path, etc
     this.props.getTrips()
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   // displayFiltered = (attractions) => {
@@ -35,7 +36,7 @@ class Trips extends Component {
     const { match, orderedTrips, addLikes } = this.props;
     let tripsSummary = ""
     if (this.props.trips.length >= 1) {
-      console.log(this.props.trips)
+
       tripsSummary = (
 
 
@@ -47,27 +48,36 @@ class Trips extends Component {
       tripsSummary = "blank"
     }
     return (
-      <div>
+      <React.Fragment>
+      <div className="intro">
+        <div className="left">
+          <h1>Welcome</h1>
+        </div>
+        <div className="right">
+          <img src="/images/home1.jpg" />
+        </div>
+
+      </div>
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
 
         <SearchContainer />
 
 
-      <div className="tripform">
-        <TripsNew />
-        {tripsSummary}
+          <div className="tripform">
+            <TripsNew />
+            {tripsSummary}
 
-      </div>
+          </div>
         </div>
 
       <div className="attrcontainer">
         <hr />
         <div>
-        <Attractions />
-        </div>
+          <Attractions />
         </div>
       </div>
+      </React.Fragment>
     )
   }
 }

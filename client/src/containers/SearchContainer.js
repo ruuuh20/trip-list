@@ -108,12 +108,11 @@ class SearchContainer extends Component {
        }).then(data => {
 
          var stringed = JSON.stringify(data)
-         console.log(data.length)
 
        initialRegions = data.map((region) => {
            return region.region
        });
-       console.log(initialRegions);
+
        // e.persist();
        this.setState({
           selectedCountry: countryCode,
@@ -136,12 +135,12 @@ class SearchContainer extends Component {
  	    +regionCode
  	    +"&key=bd8c940f6ad6dfa181f7d32922758c74&callback=?")
    .then((response) => {
-  console.log(response)
+
            return response.json();
        }).then(data => {
 
          var stringed = JSON.stringify(data)
-         console.log(data.length)
+  
 
        initialCities = data.map((city) => {
            return city.city
