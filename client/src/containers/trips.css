@@ -78,3 +78,17 @@ label {
   color: #000000;
   font-size: 1em;
 }
+
+
+/* intro section */
+
+.intro {
+  display: flex;
+}
+
+.right img {
+  max-width: 700px;
+}
+.intro > div {
+  flex: 1;
+}
