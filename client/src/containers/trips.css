@@ -3,14 +3,13 @@
 } */
 .tripcard {
   /* background: #A8D0E6; */
-  /* background: rgba(74,95,109,.7); */
-  background-color: rgba(74,135,166,1);
+  background-color: #24305e;
+  color: #fff;
   width: 250px;
   height: 250px;
   /* float: left; */
   margin: 35px;
   display: inline-block;
-
    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
    transition: 0.5s;
 }
@@ -75,7 +74,7 @@ label {
 
 .trip-item {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   font-size: 1em;
 }
 
@@ -84,7 +83,7 @@ label {
 
 .intro {
   display: flex;
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .intro h1 {

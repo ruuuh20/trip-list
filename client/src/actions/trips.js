@@ -44,7 +44,7 @@ export const addTrip = trip => {
       },
       body: JSON.stringify({ trip: trip })
     })
-    .then(resp => resp.json())
+    .then(response => response.json())
     .then(trip => {
 
       dispatch({ type: 'ADD_TRIP', trip })
