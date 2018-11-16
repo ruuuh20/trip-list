@@ -10,7 +10,8 @@ import { bindActionCreators } from 'redux'
 
 class TripsShow extends Component {
 
-  componentDidMount = () => {
+  componentDidMount() {
+    console.log("HELLO");
     this.props.getTrips()
   }
 
@@ -21,13 +22,16 @@ class TripsShow extends Component {
   }
   render() {
 
+
+
+
     const { trip, cityAttractions } = this.props;
-    console.log("um")
+    // console.log(this.props)
     // cityAttractions returns an array of objects
     // debugger
     return (
       <div>
-      <h1>{trip.destination}</h1>
+      <h1>{trip.destination ? trip.destination : "loading"}</h1>
 
         <h2>({cityAttractions.length ? cityAttractions.length : 0}) Places to visit in {trip.destination}</h2>
         {cityAttractions.map(item => {
@@ -44,8 +48,19 @@ class TripsShow extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  {trips: state.trips}
+function mapStateToProps(state, ownProps) {
+
+
+
+//   trips: state.trips,
+//   attractions: state.attractions
+//
+// })
+    // filteredTrips: state.trips.filter(trip => trip.likes > 20),
+
+
+
+
 
   const trip = state.trips.find(trip => trip.id === +ownProps.match.params.tripId);
   const cityAttractions = state.attractions.filter(att => att.city === trip.destination)

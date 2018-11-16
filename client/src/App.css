@@ -88,9 +88,9 @@
 
 button {
 
-    background-color: transparent;
-    /* border: none; */
-    color: blue;
+    background-color: #f4af3d;
+    border: none;
+
     /* outline: none; */
     cursor: pointer;
     font: inherit;

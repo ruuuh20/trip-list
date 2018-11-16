@@ -14,6 +14,7 @@ import SearchContainer from './SearchContainer';
 class Trips extends Component {
 
   componentDidMount() {
+    console.log("sifhshfosdif")
     // console.log(this.props)  show history, path, etc
     this.props.getTrips()
     // console.log(this.props)
@@ -62,7 +63,7 @@ class Trips extends Component {
       <h1 className="title">CITIES</h1>
         <div className="tripsContainer">
 
-      
+
 
 
           <div className="tripform">
