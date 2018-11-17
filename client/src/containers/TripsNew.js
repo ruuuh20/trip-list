@@ -8,7 +8,7 @@ class TripsNew extends Component {
     super(props);
 
     this.state = {
-      destination: 'Or Add a City Here',
+      destination: '',
 
     };
   }

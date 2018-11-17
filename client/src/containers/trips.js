@@ -52,7 +52,7 @@ class Trips extends Component {
       <React.Fragment>
       <div className="intro">
         <div className="left">
-        <h1>Welcome</h1>
+        <h1>TripList</h1>
           <p>A simplified way to keep track of your travels</p>
         </div>
         <div className="right">

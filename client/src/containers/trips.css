@@ -5,7 +5,7 @@
   /* background: #A8D0E6; */
   background-color: #24305e;
   color: #fff;
-
+  padding-top: 20px;
   height: 200px;
   width: 70%;
   /* float: left; */
@@ -92,13 +92,14 @@ label {
   position: absolute;
 left: 280px;
 z-index: 10;
+letter-spacing: 2.5px;
 }
 
 .intro p {
   font-size: 2em;
   position: absolute;
 left: 280px;
-top: 320px;
+top: 260px;
 z-index: 10;
 }
 
@@ -112,7 +113,7 @@ z-index: 10;
   flex: 2
 }
 .right img {
-  max-width: 800px;
+  max-width: 850px;
   opacity: .8;
 }
 /* .intro > div {

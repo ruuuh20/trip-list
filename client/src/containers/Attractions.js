@@ -38,9 +38,7 @@ class Attractions extends Component {
     }
     return(
       <div>
-      <SearchContainer
-      fetchVenues={this.props.fetchVenues}
-      />
+  
         <div className="attractionsContainer">
         <AttractionsNew trips={this.props.trips} changed={this.handleInput}/>
         <h1 className="title">ATTRACTIONS</h1>
