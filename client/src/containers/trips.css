@@ -3,11 +3,12 @@
 } */
 .tripcard {
   /* background: #A8D0E6; */
-  background-color: #24305e;
-  color: #fff;
+  border-top: #24305e 10px solid;
+  /* background-image: url('https://source.unsplash.com/random/800x250?v=random'); */
+  color: #24305e;
   padding-top: 20px;
   height: 200px;
-  width: 70%;
+  max-width: 50%;
   /* float: left; */
   margin: 35px auto;
 
@@ -75,7 +76,8 @@ label {
 
 .trip-item {
   text-decoration: none;
-  color: #fff;
+  color: #24305e;
+  background-color: #fff;
   font-size: 1em;
 }
 

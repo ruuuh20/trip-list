@@ -52,7 +52,7 @@ const TripCard =  ({trip, addLikes}) =>
 
     // a e d + err
 
-    <div key={trip.id} className="tripcard">
+    <div key={trip.id} className="tripcard" style={{backgroundImage: "url('https://source.unsplash.com/random/200x250?v={trip.destination}')"}}>
 
       <h1><Link to={`/trips/${trip.id}`} className="trip-item">{trip.destination}</Link></h1>
        <button onClick={() => addLikes(trip.id, trip.likes + 1)}>Like</button>

@@ -17,7 +17,8 @@ class Trips extends Component {
     console.log("sifhshfosdif")
     // console.log(this.props)  show history, path, etc
     this.props.getTrips()
-    // console.log(this.props)
+
+
   }
 
   // displayFiltered = (attractions) => {

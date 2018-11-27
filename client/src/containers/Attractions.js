@@ -38,14 +38,12 @@ class Attractions extends Component {
     }
     return(
       <div>
-  
         <div className="attractionsContainer">
+            <h1 className="title">ATTRACTIONS</h1>
         <AttractionsNew trips={this.props.trips} changed={this.handleInput}/>
-        <h1 className="title">ATTRACTIONS</h1>
+
           {attrSummary}
         </div>
-
-
       </div>
     )
     }
